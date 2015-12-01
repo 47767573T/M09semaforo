@@ -21,8 +21,7 @@ public class Parking {
         //CREAMOS LOS HILOS QUE SE SOLICITEN
         for (int i = 0; i < coches.length ; i++) {
             coches[i] = new Coche();
-            coches[i].run();
-
+            coches[i].start();
         }
 
     }
