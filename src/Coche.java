@@ -5,7 +5,6 @@ import java.util.Random;
  */
 public class Coche extends Thread {
 
-
     int matricula;
     int contador = 5;  //esta variable es para probar que este coche aparque y salga 5 veces antes de terminar
     boolean aparcado = false;
@@ -13,8 +12,9 @@ public class Coche extends Thread {
     Semaforo semaforo;
 
 
-
+    //CONSTRUCTOR
     public Coche() {
+
         Random rnd = new Random();
         matricula = rnd.nextInt(8999)+1000; //Asignación aleatoria de numero de matricula
         semaforo = new Semaforo();
@@ -31,7 +31,7 @@ public class Coche extends Thread {
 
     /**
      * define el coche como no aparcado cuando sale del parking
-     * @return el numero de plaza que desocupara del aprking
+     * @return el numero de plaza que desocupara del parking
      */
     public int desocupar(){
         aparcado = false;
@@ -51,6 +51,7 @@ public class Coche extends Thread {
     public void infoSalida(){
         System.out.println("<--------Coche("+matricula+") sale de la plaza "+plazaActual+"("+contador+")\n");
     }
+
 
     @Override
     public final void run() {
